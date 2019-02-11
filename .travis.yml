@@ -29,6 +29,7 @@ install:
 - kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
 - helm init --service-account tiller
 - go get -u github.com/alecthomas/gometalinter && gometalinter --install
+- unset GOPATH
 stages:
 - name: build
 - name: release
